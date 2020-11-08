@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar mascota</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <nav>
+        <span id="logo">Adoptaperro.com</span>
+        <ul id="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="PG02.html">¿Quienes somos?</a></li>
+            <li><a href="PG03.html">Buscador</a></li>
+            <li><a href="PG11.html">Perfil</a></li>
+            <li><a href="index.html">Salir</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span id="textcab">"LA GRANDEZA DE UNA NACIÓN Y SU PROGRESO MORAL PUEDE SER JUZGADO POR LA FORMA EN QUE SUS ANIMALES SON TRATADOS." (GANDHI)</span>
+    </header>
+    <section>
+        <div id="conform">
+            <form method="POST" action="PG13.html">
+                <fieldset>
+                    <legend>Registrar mascota</legend>
+                    <label>Id de mascota: </label><input type="text"><br>
+                    <label>Documento del la persona: </label><input type="number"><br>
+                    <label>Fecha de registro: </label><input type="date"><br>
+                    <label>Nombre de mascota: </label><input type="text"><br>
+                    <label>Tipo: </label>
+                    <select>
+                    <optgroup label="Tipo:">
+                        <option></option>
+                        <option>Canino</option>
+                        <option>Felino</option>
+                    </optgroup>
+                </select><br>
+                    <label>Raza: </label><input type="text"><br>
+                    <label>Genero: </label>
+                    <select>
+                    <optgroup label="Genero:">
+                        <option></option>
+                        <option>Hembra</option>
+                        <option>Macho</option>
+                    </optgroup>
+                </select><br>
+                    <label>Color: </label><input type="text"><br>
+                    <label>Lugar de donde se perdió: </label><br>
+                    <textarea cols="40" rows="5" maxlength="100"></textarea><br>
+                    <label>Lugar donde fue encontrado: </label><br>
+                    <textarea cols="40" rows="5" maxlength="100"></textarea><br>
+                    <label>Descripción: </label><br>
+                    <textarea cols="40" rows="5" maxlength="100"></textarea><br>
+                    <label>Estado: </label>
+                    <select>
+                    <optgroup label="Estado:">
+                        <option></option>
+                        <option>Perdido</option>
+                        <option>Encontrado</option>
+                        <option>Entregado</option>
+                    </optgroup>
+                </select><br>
+                    <input value="Registrar" type="submit">
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <span id="copy">Copyright</span>
+    </footer>
+</body>
+
+</html>
