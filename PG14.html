@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar datos de mascota</title>
     <link rel="stylesheet" href="estilos.css">
+    <script src="validacion.js"></script>
 </head>
 
 <body>
     <nav>
-        <span id="logo">Adoptaperro.com</span>
+        <span id="logo">Huellitas.com</span>
         <ul id="menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="PG02.html">¿Quienes somos?</a></li>
@@ -20,46 +21,43 @@
         </ul>
     </nav>
     <header>
-        <span id="textcab">"LA GRANDEZA DE UNA NACIÓN Y SU PROGRESO MORAL PUEDE SER JUZGADO POR LA FORMA EN QUE SUS ANIMALES SON TRATADOS." (GANDHI)</span>
+        <span id="textcab">Cuidame, y no me abandones...</span>
     </header>
     <section>
         <div id="conform">
-            <form method="POST" action="PG15.html">
+            <form method="POST" action="PG15.html" onsubmit="return validar();">
                 <fieldset>
                     <legend>Actualizar datos de mascota</legend>
-                    <label>Id de mascota: </label><input type="text"><br>
-                    <label>Nombre de mascota: </label><input type="text"><br>
+                    <label>Id de mascota: </label><input type="text" id="idmascota"><br>
+                    <label>Nombre de mascota: </label><input type="text" id="nombrem"><br>
                     <label>Tipo: </label>
                     <select>
                     <optgroup label="Tipo:">
-                        <option></option>
-                        <option>Canino</option>
-                        <option>Felino</option>
+                        <option id="tipo">Canino</option>
+                        <option id="tipo">Felino</option>
                     </optgroup>
                 </select><br>
-                    <label>Raza: </label><input type="text"><br>
+                    <label>Raza: </label><input type="text" id="raza"><br>
                     <label>Genero: </label>
                     <select>
                     <optgroup label="Genero:">
-                        <option></option>
-                        <option>Hembra</option>
-                        <option>Macho</option>
+                        <option id="genero">Hembra</option>
+                        <option id="genero">Macho</option>
                     </optgroup>
                 </select><br>
-                    <label>Color: </label><input type="text"><br>
+                    <label>Color: </label><input type="text" id="color"><br>
                     <label>Lugar de donde se perdió: </label><br>
-                    <textarea cols="40" rows="5" maxlength="100"></textarea><br>
+                    <textarea cols="40" rows="5" maxlength="100" id="lugarp"></textarea><br>
                     <label>Lugar donde fue encontrado: </label><br>
-                    <textarea cols="40" rows="5" maxlength="100"></textarea><br>
+                    <textarea cols="40" rows="5" maxlength="100" id="lugare"></textarea><br>
                     <label>Descripción: </label><br>
-                    <textarea cols="40" rows="5" maxlength="100"></textarea><br>
+                    <textarea cols="40" rows="5" maxlength="100" id="descripcion"></textarea><br>
                     <label>Estado: </label>
                     <select>
                     <optgroup label="Estado:">
-                        <option></option>
-                        <option>Perdido</option>
-                        <option>Encontrado</option>
-                        <option>Entregado</option>
+                        <option id="estado">Perdido</option>
+                        <option id="estado">Encontrado</option>
+                        <option id="estado">Entregado</option>
                     </optgroup>
                 </select><br>
                     <input value="Registrar" type="submit">
@@ -68,7 +66,7 @@
         </div>
     </section>
     <footer>
-        <span id="copy">Copyright</span>
+        <span id="copy">&copy; 2020 Huellitas.com</span>
     </footer>
 </body>
 
