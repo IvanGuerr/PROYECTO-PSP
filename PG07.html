@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="validacion.js"></script>
+</head>
+
+<body>
+    <nav>
+        <span id="logo">Huellitas.com</span>
+        <ul id="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="PG02.html">¿Quienes somos?</a></li>
+            <li><a href="PG03.html">Buscador</a></li>
+            <li><a href="PG07.html">Ingresar</a></li>
+            <li><a href="PG05.html">Registrate!</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span id="textcab">Cuidame, y no me abandones...</span>
+    </header>
+    <section>
+        <div id="conform">
+            <form method="POST" action="PG11.html" onsubmit="return validar();">
+                <fieldset>
+                    <legend>Ingresar</legend>
+                    <label>Usuario: </label><input type="text" id="usuario"><br>
+                    <label>Contraseña: </label><input type="password" id="contrasena"><br>
+                    <input value="Iniciar sesión" type="submit">
+                </fieldset>
+            </form>
+        </div>
+        <span id="res">¿Olvido su contraseña? <a href="PG09.html">Recupérala</a></span>
+    </section>
+    <footer>
+        <span id="copy">&copy; 2020 Huellitas.com</span>
+    </footer>
+</body>
+
+</html>
