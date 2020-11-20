@@ -1,5 +1,7 @@
 cd /c/xampp/htdocs/proyecto
 
+ramauno
+
 git status
 es para saber si un archivo esta traqueado o no
 
