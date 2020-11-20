@@ -1,22 +1,7 @@
+cd /c/xampp/htdocs/proyecto
+
 git status
 es para saber si un archivo esta traqueado o no
-
-********************************************************
-
-Cada vez que se habra el proyecto para iniciar
-
-
-1. git pull origin master 
-este comando trae lo que esta en el remoto a mi computadora
-
-2. git push origin master
-este comando lleva lo que esta en mi computadora al remoto
-
-
-******************************************************
-
-
-Cada vez que se realicen modificaciones:
 
 
 1. Primero fijarse en guardar los cambios
@@ -31,6 +16,4 @@ este comando trae lo que esta en el remoto a mi computadora
 
 5. git push origin master
 este comando lleva lo que esta en mi computadora al remoto
-
-
 
