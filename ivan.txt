@@ -1,0 +1,15 @@
+git status
+es para saber si un archivo esta traqueado o no
+
+
+git add .
+este comando traquea todos los archivos que se hayan modificado
+
+git commit -m "mensaje ej se modifico linea 6"
+
+git pull origin master 
+este comando trae lo que esta en el remoto a mi computadora
+
+git push origin master
+este comando lleva lo que esta en mi computadora al remoto
+
