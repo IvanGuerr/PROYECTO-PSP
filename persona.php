@@ -83,6 +83,30 @@ class persona
         }
         return $this->mensaje;
     }
+
+    public function ConsultarDocumento()
+    {
+        try
+        {
+            $sentencia = 'SELECT documentoidentidad FROM persona WHERE documentoidentidad =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_documentoIdentidad));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                return "YES";
+            }
+            else 
+            {
+                return "NO";
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return $this->mensaje;   
+    }
 }
 
 ?>
