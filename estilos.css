@@ -120,3 +120,24 @@ h1 {
     color: rgb(235, 195, 245);
     white-space: pre-wrap;
 }
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid rgb(66, 8, 8);
+    border-spacing: 0;
+}
+
+th {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid rgb(90, 130, 241);
+    border-spacing: 0;
+}

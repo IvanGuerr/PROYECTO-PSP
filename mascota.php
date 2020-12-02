@@ -101,6 +101,49 @@ class mascota
         return $this->mensaje;
     }
 
+    public function ConsultarMascotas()
+    {
+        try
+        {
+            $sentencia = 'SELECT * FROM mascota, persona WHERE mascota.documentoidentidad = persona.documentoidentidad ';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute();//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                $tabla = "<table><tr><th>Id</th><th>Fecha</th><th>Nombre Mascota</th><th>Tipo</th><th>Raza</th><th>Genero</th><th>Color</th><th>Lugar Perdida</th><th>Lugar Encontrada</th><th>Descripcion</th><th>Estado</th><th>Nombre</th><th>Apellido</th><th>Celular</th><th>Correo</th></tr>";
+
+                foreach($resultado as $result)
+                {
+                    $tabla = $tabla.
+                    "<tr>".
+                    "<td>".$result["idmascota"]."</td>".
+                    "<td>".$result["fecha"]."</td>".
+                    "<td>".$result["nombrem"]."</td>".
+                    "<td>".$result["tipo"]."</td>".
+                    "<td>".$result["raza"]."</td>".
+                    "<td>".$result["genero"]."</td>".
+                    "<td>".$result["color"]."</td>".
+                    "<td>".$result["lugarp"]."</td>".
+                    "<td>".$result["lugare"]."</td>".
+                    "<td>".$result["descripcion"]."</td>".
+                    "<td>".$result["estado"]."</td>".
+                    "<td>".$result["nombre"]."</td>".
+                    "<td>".$result["apellido"]."</td>".
+                    "<td>".$result["celular"]."</td>".
+                    "<td>".$result["correo"]."</td>".
+                    "</tr>";
+                }
+                $tabla = $tabla."</table>";
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return $tabla;   
+    }
 }
 
 ?>
