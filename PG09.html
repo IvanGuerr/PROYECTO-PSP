@@ -25,10 +25,12 @@
     </header>
     <section>
         <div id="conform">
-            <form method="POST" action="PG10.html" onsubmit="return validar();">
+            <form method="POST" action="controladorrecuperacioncontrasena.php" onsubmit="return validar();">
                 <fieldset>
                     <legend>Recuperar contraseña</legend>
-                    <label>Correo electronico: </label><input type="email" id="correo"><br>
+                    <label>Correo electronico: </label><input type="email" id="correo" name="correo"><br>
+                    <label>Usuario: </label><input type="text" id="usuario" name="usuario"><br>
+                    <label>Documento de identidad: </label><input type="text" id="documento" name="documento"><br>
                     <input value="Enviar contraseña" type="submit">
                 </fieldset>
             </form>

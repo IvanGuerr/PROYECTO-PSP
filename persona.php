@@ -107,6 +107,36 @@ class persona
         }
         return $this->mensaje;   
     }
+
+    public function ValidarIdentidad()
+    {
+        try
+        {
+            $sentencia = 'SELECT usuario FROM persona WHERE documentoidentidad =? AND correo =?';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_documentoIdentidad,$this->_correo));//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    if($result['usuario'] == $this->_usuario)//verificar
+                    {
+                        return $this->_usuario;
+                    }
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return "";   
+    }
+
+
+
 }
 
 ?>

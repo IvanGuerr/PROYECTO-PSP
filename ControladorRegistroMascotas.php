@@ -1,6 +1,6 @@
 <?php
 
-class ControladorRegistroMascotas
+class controladorRegistroMascotas
 {
     private $_idmascota;
     private $_documento;
@@ -17,6 +17,14 @@ class ControladorRegistroMascotas
 
     private $obj_persona;
     private $obj_mascota;
+
+    public function __construct()
+    {
+        require_once "persona.php";
+        require_once "mascota.php";
+        $this->obj_persona = new persona();
+        $this->obj_mascota = new mascota();
+    }
 
     public function CapturarDatosPost($idmascota_E, $documento_E, $fecha_E, $nombrem_E, $tipo_E, $raza_E, $genero_E, $color_E, $lugarp_E, $lugare_E, $descripcion_E, $estado_E)
     {
@@ -36,9 +44,6 @@ class ControladorRegistroMascotas
 
     public function ConsultarPersona()
     {
-        require_once "persona.php";
-
-        $this->obj_parsona = new persona();
         $this->obj_parsona->Set_DocumentoIdentidad($this->_documento);
         $respuesta = $this->obj_parsona->ConsultarDocumento();
         return $respuesta;
@@ -46,9 +51,6 @@ class ControladorRegistroMascotas
 
     public function AlmacenarDatosMascota()
     {
-        require_once "mascota.php";
-
-        $this->obj_mascota = new mascota();
         $this->obj_mascota->Set_Idmascota($this->_idmascota);
         $this->obj_mascota->Set_Fecha($this->_fecha);
         $this->obj_mascota->Set_Nombrem($this->_nombrem);
@@ -69,7 +71,7 @@ if($_POST)
 {
     if(isset($_POST['idmascota']) && isset($_POST['documento']) && isset($_POST['fecha']) && isset($_POST['nombrem']) && isset($_POST['tipo']) && isset($_POST['raza']) && isset($_POST['genero']) && isset($_POST['color'])&& isset($_POST['lugarp'])&& isset($_POST['lugare'])&& isset($_POST['descripcion'])&& isset($_POST['estado']))
     {
-        $control = new ControladorRegistroMascotas();
+        $control = new controladorRegistroMascotas();
         $control->CapturarDatosPost($_POST['idmascota'],$_POST['documento'],$_POST['fecha'],$_POST['nombrem'],$_POST['tipo'],$_POST['raza'],$_POST['genero'],$_POST['color'],$_POST['lugarp'],$_POST['lugare'],$_POST['descripcion'],$_POST['estado']);//pasar atributos a los paramentros
         $respuesta = $control->ConsultarPersona();
         if($respuesta == "YES")
@@ -79,5 +81,6 @@ if($_POST)
         
     }
 }
+header("Location: PG12.html");
 
 ?>

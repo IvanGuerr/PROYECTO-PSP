@@ -54,6 +54,31 @@ class login
         }
         return $this->mensaje;
     }
+
+
+    public function ConsultarContrasena()
+    {
+        try
+        {
+            $sentencia = 'SELECT contrasena FROM login WHERE usuario =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_usuario));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+
+                    return $result['contrasena'];
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return "";   
+    }
 }
 
 ?>
