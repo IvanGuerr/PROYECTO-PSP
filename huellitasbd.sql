@@ -37,8 +37,12 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`usuario`, `contrasena`) VALUES
-('claudis', '777777777'),
-('ivan', '447515');
+('claudis123', 'cccc'),
+('arma89', 'aaaa'),
+('fercho74', 'ffff'),
+('robert102', 'rrrr'),
+('mario52', 'mmmm'),
+('ivan85', 'iiii');
 
 -- --------------------------------------------------------
 
@@ -66,7 +70,22 @@ CREATE TABLE `mascota` (
 --
 
 INSERT INTO `mascota` (`idmascota`, `fecha`, `nombrem`, `tipo`, `raza`, `genero`, `color`, `lugarp`, `lugare`, `descripcion`, `estado`, `documentoidentidad`) VALUES
-('3e4235', '2020-11-01', 'paque', 'perro', 'chan', 'macho', 'cafe', 'bogota', 'soacha', 'bucwuhowvovin', 'encontrado', '88246590');
+('MS0001', '2020-11-01', 'Toby', 'Canino', 'Poodle', 'Macho', 'cafe', 'NN', 'bogota', 'Sin especificacion', 'Encontrado', '42553845'),
+('MS0002', '2020-11-01', 'Zeus', 'Felino', 'Persa', 'Hembra', 'negro', 'cali', 'NN', 'Sin especificacion', 'Perdido', '42553845'),
+('MS0003', '2020-11-01', 'Wanda', 'Canino', 'Labrador', 'Hembra', 'blanco', 'medellin', 'NN', 'Sin especificacion', 'Perdido', '25418444'),
+('MS0004', '2020-11-01', 'Coco', 'Felino', 'Siames', 'Macho', 'cafe', 'NN', 'bogota', 'Sin especificacion', 'Encontrado', '25418444'),
+('MS0005', '2020-11-01', 'Rocky', 'Canino', 'Beagle', 'Macho', 'cafe', 'cartagena', 'cartagena', 'Sin especificacion', 'Entregado', '25418444'),
+('MS0006', '2020-11-01', 'Chispa', 'Felino', 'Ragdoll', 'Hembra', 'blanco', 'medellin', 'medellin', 'Sin especificacion', 'Entregado', '78965426'),
+('MS0007', '2020-11-01', 'Firulais', 'Canino', 'Bulldog', 'Macho', 'cafe', 'NN', 'bogota', 'Sin especificacion', 'Encontrado', '78965426'),
+('MS0008', '2020-11-01', 'Paco', 'Felino', 'Abisinio', 'Macho', 'cafe', 'bogota', 'bogota', 'Sin especificacion', 'Entregado', '14356985'),
+('MS0009', '2020-11-01', 'Lucas', 'Canino', 'Beagle', 'Macho', 'negro', 'medellin', 'NN', 'Sin especificacion', 'Perdido', '14356985'),
+('MS0010', '2020-11-01', 'Gorda', 'Felino', 'Maine', 'Hembra', 'cafe', 'cali', 'NN', 'Sin especificacion', 'Perdido', '14356985'),
+('MS0011', '2020-11-01', 'Bruno', 'Canino', 'Poodle', 'Macho', 'cafe', 'NN', 'medellin', 'Sin especificacion', 'Encontrado', '89650231'),
+('MS0012', '2020-11-01', 'Minino', 'Felino', 'Siberiano', 'Macho', 'blanco', 'cartagena', 'cartagena', 'Sin especificacion', 'Entregado', '89650231'),
+('MS0013', '2020-11-01', 'Achanty', 'Canino', 'Labrador', 'Hembra', 'cafe', 'cali', 'cali', 'Sin especificacion', 'Entregado', '88246590'),
+('MS0014', '2020-11-01', 'Paque', 'Felino', 'Manx', 'Macho', 'cafe', 'bogota', 'bogota', 'Sin especificacion', 'Entregado', '88246590'),
+('MS0015', '2020-11-01', 'Chiky', 'Canino', 'Bulldog', 'Macho', 'negro', 'NN', 'bogota', 'Sin especificacion', 'Encontrado', '88246590'),
+('MS0016', '2020-11-01', 'Coco', 'Felino', 'Balines', 'Hembra', 'cafe', 'medellin', 'NN', 'Sin especificacion', 'Perdido', '88246590');
 
 -- --------------------------------------------------------
 
@@ -89,8 +108,12 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`fecharegistropersona`, `documentoidentidad`, `nombre`, `apellido`, `celular`, `correo`, `usuario`) VALUES
-('2020-11-18', '5425254224', 'Claudia', 'Patricia', '554645645', 'claudis@hotmail.com', 'claudis'),
-('2020-11-22', '88246590', 'Ivan', 'Cardenas', '3182855503', 'ivcardenas2@poligran.edu.co', 'ivan');
+('2020-11-18', '42553845', 'Claudia', 'Rojas', '3118643125', 'claudis@hotmail.com', 'claudis123'),
+('2020-11-18', '25418444', 'Armando', 'Gonzalez', '3204638966', 'arm741@gmail.com', 'arma89'),
+('2020-11-18', '78965426', 'Federico', 'Albarracin', '3014725102', 'albarracin789@hotmail.com', 'fercho74'),
+('2020-11-18', '14356985', 'Roberto', 'Mora', '3006325869', 'rmora41@gmail.com', 'robert102'),
+('2020-11-18', '89650231', 'Mario', 'Martinez', '3104223366', 'mm74@hotmail.com', 'mario52'),
+('2020-11-22', '88246590', 'Ivan', 'Cardenas', '3182855503', 'ivcardenas2@poligran.edu.co', 'ivan85');
 
 --
 -- Índices para tablas volcadas

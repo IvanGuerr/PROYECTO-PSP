@@ -144,6 +144,72 @@ class mascota
         }
         return $tabla;   
     }
+
+    public function ConsultarMascotasDocumento($doc_E)
+    {
+        try
+        {
+            $sentencia = 'SELECT * FROM mascota WHERE documentoidentidad = ?';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($doc_E));//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                $tabla = "<table><tr><th>Id</th><th>Fecha</th><th>Nombre Mascota</th><th>Tipo</th><th>Raza</th><th>Genero</th><th>Color</th><th>Lugar Perdida</th><th>Lugar Encontrada</th><th>Descripcion</th><th>Estado</th></tr>";
+
+                foreach($resultado as $result)
+                {
+                    $tabla = $tabla.
+                    "<tr>".
+                    "<td>".$result["idmascota"]."</td>".
+                    "<td>".$result["fecha"]."</td>".
+                    "<td>".$result["nombrem"]."</td>".
+                    "<td>".$result["tipo"]."</td>".
+                    "<td>".$result["raza"]."</td>".
+                    "<td>".$result["genero"]."</td>".
+                    "<td>".$result["color"]."</td>".
+                    "<td>".$result["lugarp"]."</td>".
+                    "<td>".$result["lugare"]."</td>".
+                    "<td>".$result["descripcion"]."</td>".
+                    "<td>".$result["estado"]."</td>".
+                    "</tr>";
+                }
+                $tabla = $tabla."</table>";
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return $tabla;   
+    }
+
+    public function ActualizarDatosMascota($documento_E, $idmascota_E, $nombrem_E, $tipo_E, $raza_E, $genero_E, $color_E, $lugarp_E, $lugare_E, $descripcion_E, $estado_E)
+    {
+        try
+        {
+            $sentencia = 'SELECT idmascota FROM mascota WHERE documentoidentidad =? AND idmascota =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($documento_E,$idmascota_E));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                $dato ="";
+               
+                $sentencia = 'UPDATE mascota SET nombrem =?, tipo =?, raza =?, genero =?, color =?, lugarp =?, lugare =?, descripcion =?, estado =? WHERE idmascota=?';
+                $agregar = $this->conexion->prepare($sentencia);
+                $agregar->execute(array($nombrem_E, $tipo_E, $raza_E, $genero_E, $color_E, $lugarp_E, $lugare_E, $descripcion_E, $estado_E, $idmascota_E));
+                return "Actualizacion satisfactoria";
+            }
+        }
+        catch(PDOException $e)
+        {
+            return "error";
+        }
+        return "Error al actualizar";   
+    }
+
 }
 
 ?>

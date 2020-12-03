@@ -135,7 +135,182 @@ class persona
         return "";   
     }
 
+    public function ConsultarNombre()
+    {
+        try
+        {
+            $sentencia = 'SELECT nombre FROM persona WHERE usuario =?';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_usuario));//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    return $result['nombre'];
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return "";   
+    }
 
+    public function ConsultarApellido()
+    {
+        try
+        {
+            $sentencia = 'SELECT apellido FROM persona WHERE usuario =?';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_usuario));//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    return $result['apellido'];
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return "";   
+    }
+
+    public function ConsultarCelular()
+    {
+        try
+        {
+            $sentencia = 'SELECT celular FROM persona WHERE usuario =?';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_usuario));//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    return $result['celular'];
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return "";   
+    }
+
+    public function ConsultarCorreo()
+    {
+        try
+        {
+            $sentencia = 'SELECT correo FROM persona WHERE usuario =?';//
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($this->_usuario));//
+            $resultado = $agregar->fetchAll();
+            //echo var_dump($resultado);
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    return $result['correo'];
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo "error";
+        }
+        return "";   
+    }
+
+    public function CargarDatosPersona($user_E)
+    {
+        $this->_usuario = $user_E;
+        $this->_nombre = $this->ConsultarNombre();
+        $this->_apellido = $this->ConsultarApellido();
+        $this->_celular = $this->ConsultarCelular();
+        $this->_correo = $this->ConsultarCorreo();
+    }
+
+    public function Get_Nombre()
+    {
+        return $this->_nombre;
+    }
+
+    public function Get_Apellido()
+    {
+        return $this->_apellido;
+    }
+
+    public function Get_Celular()
+    {
+        return $this->_celular;
+    }
+
+    public function Get_Correo()
+    {
+        return $this->_correo;
+    }
+
+    public function ActualizarDatosPersona($usuario_E,$nombre_E, $apellido_E, $celular_E, $correo_E)
+    {
+        try
+        {
+            $sentencia = 'SELECT documentoidentidad FROM persona WHERE usuario =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($usuario_E));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                $dato ="";
+                
+                foreach($resultado as $result)
+                {
+                    $dato = $result['documentoidentidad'];
+                }
+               
+                $sentencia = 'UPDATE persona SET nombre =?, apellido =?, celular =?, correo =? WHERE documentoidentidad=?';
+                $agregar = $this->conexion->prepare($sentencia);
+                $agregar->execute(array($nombre_E, $apellido_E, $celular_E, $correo_E, $dato));
+            }
+        }
+        catch(PDOException $e)
+        {
+            return "error";
+        }
+        return "YES";   
+    }
+
+    public function ConsultarNumeroDocumento($user_E)
+    {
+        try
+        {
+            $sentencia = 'SELECT documentoidentidad FROM persona WHERE usuario =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($user_E));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    return $result['documentoidentidad'];
+                }
+            }
+        }
+        catch(PDOException $e)
+        {
+            return "error";
+        }
+        return "error2";
+    }
 
 }
 

@@ -79,6 +79,44 @@ class login
         }
         return "";   
     }
+
+    public function CargarDatosLogin($user_E)
+    {
+        $this->_usuario = $user_E;
+        $this->_contrasena = $this->ConsultarContrasena();
+    }
+
+    public function Get_contrasena()
+    {
+        return $this->_contrasena;
+    }
+
+    public function Get_usuario()
+    {
+        return $this->_usuario;
+    }
+
+    public function ActualizarDatosLogin($usuario_E,$contrasena_E)
+    {
+        try
+        {
+            $sentencia = 'SELECT usuario FROM login WHERE usuario =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($usuario_E));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                $sentencia = 'UPDATE login SET contrasena =? WHERE usuario=?';
+                $agregar = $this->conexion->prepare($sentencia);
+                $agregar->execute(array($contrasena_E,$usuario_E));
+            }
+        }
+        catch(PDOException $e)
+        {
+            return "error";
+        }
+        return "YES";   
+    }
 }
 
 ?>
