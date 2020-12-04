@@ -65,6 +65,6 @@ if($_POST)
         $control->AlmacenarDatosPersona();
     }
 }
-header("Location: PG05.html");
+header("Location: PG05.php");
 
 ?>

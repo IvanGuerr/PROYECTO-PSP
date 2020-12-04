@@ -117,6 +117,40 @@ class login
         }
         return "YES";   
     }
+
+    public function ValidarUsuarioContrasena($usuario_E,$contrasena_E)
+    {
+        try
+        {
+            $sentencia = 'SELECT usuario, contrasena FROM login WHERE usuario =?';
+            $agregar = $this->conexion->prepare($sentencia);
+            $agregar->execute(array($usuario_E));
+            $resultado = $agregar->fetchAll();
+            if($resultado != null)
+            {
+                foreach($resultado as $result)
+                {
+                    if($result['usuario'] == $usuario_E && $result['contrasena'] == $contrasena_E)
+                    {
+                        return "ACEPTADO";
+                    }
+                    else
+                    {
+                        return "CONTRASEÑA INVALIDA";
+                    }
+                }
+            }
+            else
+            {
+                //no existe el usuario registrado
+                return "USUARIO NO REGISTRADO";
+            }
+        }
+        catch(PDOException $e)
+        {
+            return "ERROR";
+        }
+    }
 }
 
 ?>

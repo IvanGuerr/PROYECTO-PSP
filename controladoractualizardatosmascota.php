@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+if(isset($_SESSION['usuario']))
+{
+
+}
+else
+{
+    header("Location: PG07.php");
+}
 
 class controladorActualizarDatosMascota
 {
@@ -29,7 +39,7 @@ class controladorActualizarDatosMascota
         <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>Buscador</title>
+        <title>Actualizar Mascotas</title>
         <link rel='stylesheet' href='estilos.css'>
         <script src='validacion.js'></script>
         </head>
@@ -37,11 +47,11 @@ class controladorActualizarDatosMascota
         <nav>
         <span id='logo'>Huellitas.com</span>
         <ul id='menu'>
-            <li><a href='index.html'>Inicio</a></li>
-            <li><a href='PG02.html'>¿Quienes somos?</a></li>
-            <li><a href='PG03.html'>Buscador</a></li>
-            <li><a href='PG11.html'>Perfil</a></li>
-            <li><a href='index.html'>Salir</a></li>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='PG02.php'>¿Quienes somos?</a></li>
+            <li><a href='PG03.php'>Buscador</a></li>
+            <li><a href='PG11.php'>Perfil</a></li>
+            <li><a href='index.php'>Salir</a></li>
         </ul>
         </nav>
         <header>
@@ -107,7 +117,7 @@ class controladorActualizarDatosMascota
 }
 
 $control = new controladorActualizarDatosMascota();
-$control->ConsultarMascotas("claudis123");
+$control->ConsultarMascotas($_SESSION['usuario']);
 $control->MostrarPaginaActualizarPersona();
 
 ?>

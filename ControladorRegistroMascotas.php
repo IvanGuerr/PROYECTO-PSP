@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+if(isset($_SESSION['usuario']))
+{
+
+}
+else
+{
+    header("Location: PG07.php");
+}
 
 class controladorRegistroMascotas
 {
@@ -81,6 +91,6 @@ if($_POST)
         
     }
 }
-header("Location: PG12.html");
+header("Location: PG12.php");
 
 ?>
