@@ -45,36 +45,26 @@ echo "<!DOCTYPE html>
     <section>
         <div class='sec'><br><br>
             <h1>Como no extraviar a tu mascota...</h1><br><br><br>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
+            <p>Siempre saque a su mascota con collar...</p>
+            <p>No permita que jueguen solos...</p>
+            <p>No los deje sin supervision...</p>
+            <p>Pongales un collar con algun numero de contacto...</p>
         </div>
         <div class='sec'><br><br>
             <h1>Qué hacer si encuentras a una mascota perdida...</h1><br><br><br>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
+            <p>Registrala en nuestro sistema...</p>
+            <p>Alimentala y dale un hogar provisional...</p>
+            <p>Acegurate que no este enferma...</p>
+            <p>Acegurate de que no tenga rabia...</p>
+            <p>Revisa si tiene un numero en el collar...</p>
+            <p>Verifica que tenga algun chip de identificacion</p>
         </div>
         <div class='sec'><br><br>
             <h1>En caso de perdida...</h1><br><br><br>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
+            <p>Registrala en nuestro sistema...</p>
+            <p>pide ayuda a tus amigos y buscala en el lugar...</p>
+            <p>Esperala por 24 horas y vuelve a ir donde se perdio...</p>
+            <p>Pon carteles con tus datos y una foto...</p>
         </div>
     </section>
     <footer>

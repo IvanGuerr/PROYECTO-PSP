@@ -45,14 +45,14 @@ echo "<!DOCTYPE html>
     <section>
         <div class='sec'><br><br>
             <h1>Quienes somos...</h1><br><br><br>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
-            <p>dasdasdsadsadasdasdasdsadsadsadasdasdasa</p>
+            <p>Somos una organizacion sin animo de lucro</p>
+            <p>que busca ayudar a las personas a encontrar</p>
+            <p>sus mascotas extraviadas, ya sea que las</p>
+            <p>pierdan, o que se encuentren alguna mascota</p>
+            <p>ya que los animales nos importan, porque</p>
+            <p>son los mejores amigos de las personas.</p>
+            <p>Estos animalitos no se deben olvidar porque</p>
+            <p>nos muestra su fidelidad</p>
         </div>
     </section>
     <footer>
