@@ -36,8 +36,51 @@ class controladorRecuperacionContrasena
         if($respuesta != "")
         {
             $this->obj_login->Set_usuario($respuesta);
-            echo $this->obj_login->ConsultarContrasena();
+            return $this->obj_login->ConsultarContrasena();
         }
+        return "";
+    }
+
+    public function MostrarRespuesta($respuesta)
+    {
+        echo 
+        "<!DOCTYPE html>
+        <html lang='en'>
+        <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Recuperar contraseña</title>
+        <link rel='stylesheet' href='estilos.css'>
+        <script src='validacion.js'></script>
+        </head>
+        <body>
+        <nav>
+        <span id='logo'>Huellitas.com</span>
+
+        ";
+            echo "<ul id='menu'>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='PG02.php'>¿Quienes somos?</a></li>
+            <li><a href='PG03.php'>Buscador</a></li>
+            <li><a href='PG07.php'>Ingresar</a></li>
+            <li><a href='PG05.php'>Registrate!</a></li>
+            </ul>";
+ 
+        echo "
+
+        </nav>
+        <header>
+        <span id='textcab'>Cuidame, y no me abandones...</span>
+        </header>
+        <section>";
+        echo $respuesta;
+        echo 
+        "</section>
+        <footer>
+        <span id='copy'>&copy; 2020 Huellitas.com</span>
+        </footer>
+        </body>
+        </html>";
     }
 }
 
@@ -47,7 +90,18 @@ if($_POST)
     {
         $control = new controladorRecuperacionContrasena();
         $control->CarturarDatosPersona($_POST['correo'],$_POST['usuario'],$_POST['documento']);//pasar atributos a los paramentros
-        $control->ConsultarPersona();
+        $dato = $control->ConsultarPersona();
+
+        if($dato != "" && $dato != "error")
+        {
+            $dato = "Su contraseña es: ".$dato; //contraseña
+        }
+        else
+        {
+            $dato = "Informacion Erronea. No se puede restablecer la contraseña.";
+        }
+
+        $control->MostrarRespuesta($dato);
     }
 }
 

@@ -59,7 +59,7 @@ class controladorActualizarPersona
             <li><a href='PG02.php'>¿Quienes somos?</a></li>
             <li><a href='PG03.php'>Buscador</a></li>
             <li><a href='PG11.php'>Perfil</a></li>
-            <li><a href='index.php'>Salir</a></li>
+            <li><a href='cerrarsesion.php'>Salir</a></li>
         </ul>
         </nav>
         <header>

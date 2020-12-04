@@ -10,6 +10,10 @@ else
     header("Location: PG07.html");
 }
 
+require_once "persona.php";
+$obj = new persona();
+$doc = $obj->ConsultarNumeroDocumento($_SESSION['usuario']);
+
 echo "<!DOCTYPE html>
 <html lang='en'>
 
@@ -29,7 +33,7 @@ echo "<!DOCTYPE html>
             <li><a href='PG02.php'>¿Quienes somos?</a></li>
             <li><a href='PG03.php'>Buscador</a></li>
             <li><a href='PG11.php'>Perfil</a></li>
-            <li><a href='index.php'>Salir</a></li>
+            <li><a href='cerrarsesion.php'>Salir</a></li>
         </ul>
     </nav>
     <header>
@@ -41,7 +45,7 @@ echo "<!DOCTYPE html>
                 <fieldset>
                     <legend>Registrar mascota</legend>
                     <label>Id de mascota: </label><input type='text' id='idmascota' name='idmascota'><br>
-                    <label>Documento del la persona: </label><input type='number' id='documento' name='documento'><br>
+                    <label>Documento del la persona: </label><input type='number' id='documento' name='documento' value='".$doc."' readonly><br>
                     <label>Fecha de registro: </label><input type='date' id='fecha' name='fecha'><br>
                     <label>Nombre de mascota: </label><input type='text' id='nombrem' name='nombrem'><br>
                     <label>Tipo: </label>

@@ -96,16 +96,17 @@ class mascota
         }
         catch(PDOException $e)
         {
-            echo "error";
+            return "error";
         }
         return $this->mensaje;
     }
 
     public function ConsultarMascotas()
     {
+        $tabla = "";
         try
         {
-            $sentencia = 'SELECT * FROM mascota, persona WHERE mascota.documentoidentidad = persona.documentoidentidad ';//
+            $sentencia = 'SELECT * FROM mascota, persona WHERE mascota.documentoidentidad = persona.documentoidentidad ORDER BY idmascota';//
             $agregar = $this->conexion->prepare($sentencia);
             $agregar->execute();//
             $resultado = $agregar->fetchAll();
@@ -147,6 +148,8 @@ class mascota
 
     public function ConsultarMascotasDocumento($doc_E)
     {
+        $tabla = "";
+
         try
         {
             $sentencia = 'SELECT * FROM mascota WHERE documentoidentidad = ?';//

@@ -54,8 +54,8 @@ class controladorRegistroMascotas
 
     public function ConsultarPersona()
     {
-        $this->obj_parsona->Set_DocumentoIdentidad($this->_documento);
-        $respuesta = $this->obj_parsona->ConsultarDocumento();
+        $this->obj_persona->Set_DocumentoIdentidad($this->_documento);
+        $respuesta = $this->obj_persona->ConsultarDocumento();
         return $respuesta;
     }
 
@@ -73,7 +73,49 @@ class controladorRegistroMascotas
         $this->obj_mascota->Set_Descripcion($this->_descripcion);
         $this->obj_mascota->Set_Estado($this->_estado); 
         $this->obj_mascota->Set_Documento($this->_documento);
-        $this->obj_mascota->RegistrarMascota();
+        return $this->obj_mascota->RegistrarMascota();
+    }
+
+    public function MostrarRespuesta($respuesta)
+    {
+        echo 
+        "<!DOCTYPE html>
+        <html lang='en'>
+        <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Registro mascotas</title>
+        <link rel='stylesheet' href='estilos.css'>
+        <script src='validacion.js'></script>
+        </head>
+        <body>
+        <nav>
+        <span id='logo'>Huellitas.com</span>
+
+        ";
+            echo "<ul id='menu'>
+            <li><a href='index.php'>Inicio</a></li>
+            <li><a href='PG02.php'>¿Quienes somos?</a></li>
+            <li><a href='PG03.php'>Buscador</a></li>
+            <li><a href='PG11.php'>Perfil</a></li>
+            <li><a href='cerrarsesion.php'>Salir</a></li>
+            </ul>";
+ 
+        echo "
+
+        </nav>
+        <header>
+        <span id='textcab'>Cuidame, y no me abandones...</span>
+        </header>
+        <section>";
+        echo $respuesta;
+        echo 
+        "</section>
+        <footer>
+        <span id='copy'>&copy; 2020 Huellitas.com</span>
+        </footer>
+        </body>
+        </html>";
     }
 }
 
@@ -86,11 +128,20 @@ if($_POST)
         $respuesta = $control->ConsultarPersona();
         if($respuesta == "YES")
         {
-            $control->AlmacenarDatosMascota();
+           $dato = $control->AlmacenarDatosMascota();
+
+           if($dato == "Sin problemas")
+           {
+                $control->MostrarRespuesta("Registro Exitoso");
+           }
+           else
+           {
+                $control->MostrarRespuesta("Error en el registro");
+           }
         }
         
     }
 }
-header("Location: PG12.php");
+//header("Location: PG12.php");
 
 ?>
